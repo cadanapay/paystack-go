@@ -11,26 +11,27 @@ type TransferService service
 
 // TransferRequest represents a request to create a transfer.
 type TransferRequest struct {
-	Source    string  `json:"source,omitempty"`
-	Amount    float32 `json:"amount,omitempty"`
-	Currency  string  `json:"currency,omitempty"`
-	Reason    string  `json:"reason,omitempty"`
-	Recipient string  `json:"recipient,omitempty"`
+	Source    string `json:"source,omitempty"`
+	Amount    int    `json:"amount,omitempty"`
+	Currency  string `json:"currency,omitempty"`
+	Reason    string `json:"reason,omitempty"`
+	Recipient string `json:"recipient,omitempty"`
+	Reference string `json:"reference,omitempty"`
 }
 
 // Transfer is the resource representing your Paystack transfer.
 // For more details see https://developers.paystack.co/v1.0/reference#initiate-transfer
 type Transfer struct {
-	ID           int     `json:"id,omitempty"`
-	CreatedAt    string  `json:"createdAt,omitempty"`
-	UpdatedAt    string  `json:"updatedAt,omitempty"`
-	Domain       string  `json:"domain,omitempty"`
-	Integration  int     `json:"integration,omitempty"`
-	Source       string  `json:"source,omitempty"`
-	Amount       float32 `json:"amount,omitempty"`
-	Currency     string  `json:"currency,omitempty"`
-	Reason       string  `json:"reason,omitempty"`
-	TransferCode string  `json:"transfer_code,omitempty"`
+	ID           int    `json:"id,omitempty"`
+	CreatedAt    string `json:"createdAt,omitempty"`
+	UpdatedAt    string `json:"updatedAt,omitempty"`
+	Domain       string `json:"domain,omitempty"`
+	Integration  int    `json:"integration,omitempty"`
+	Source       string `json:"source,omitempty"`
+	Amount       int    `json:"amount,omitempty"`
+	Currency     string `json:"currency,omitempty"`
+	Reason       string `json:"reason,omitempty"`
+	TransferCode string `json:"transfer_code,omitempty"`
 	// Initiate returns recipient ID as recipient value, Fetch returns recipient object
 	Recipient interface{} `json:"recipient,omitempty"`
 	Status    string      `json:"status,omitempty"`
